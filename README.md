@@ -1,38 +1,68 @@
 # Project Title
 
+my app will be called "DATABASS"
+
 ## Overview
 
-What is your app? Brief description in a couple of sentences.
+ it is a simple bass/chord synthesizer, designed to encourage learning about synthesis and experimenting with sound
 
 ### Problem
 
-Why is your app needed? Background information around any pain points or other reasons.
+music production equipment, both hardware and software, can be very expensive. i want to try to make something that can be used for free by anyone
+with an internet connection
 
 ### User Profile
 
-Who will use your app? How will they use it? Any special considerations that your app must take into account.
+musicians could implement this into their regular creative workflow, or non-musicians interested in playing around with synthesis or just music software in general, but don't want to commit to heavy costs of professional software
 
 ### Features
 
-List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented.
+I would like to implement a playable keyboard, along with basic parameters for manipulating the sound generated
 
 ## Implementation
 
 ### Tech Stack
 
-List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.
+react
+node
+sass
+tone.js
+mui
+
+
 
 ### APIs
 
-List any external sources of data that will be used in your app.
+web audio api
 
 ### Sitemap
 
-List the pages of your app with brief descriptions. You can show this visually, or write it out.
+homepage - 
+    this will be the initial page you see when you load the app, 
+    it will have a brief description of what the app is and what it does.
+    will have an 'play' button to go to the instrument page, and a 'helpme'
+    button that goes to the information page
+
+
+
+instrument page -
+    this will be a visual representation of a synthesizer,
+    including a piano keyboard with 12 keys, and controls to 
+    select different mode of audio output. for example, which type of soundwave to generate,
+    octave switch, ADSR controls, 
+
+
+information page - 
+    this page will include a short description of what each control
+    on the instrument page does
+
+
 
 ### Mockups
 
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+![roughsketch home page](../databass/assets/mockups/home.png)
+![roughsketch help page](../databass/assets/mockups/help.png)
+![roughsketch play page](../databass/assets/mockups/play.png)
 
 ### Data
 
@@ -40,7 +70,14 @@ Describe your data and the relationships between them. You can show this visuall
 
 ### Endpoints
 
-List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
+so far only needs front end endpoints so
+
+/ for homepage
+
+/help for help page
+
+/play for play page
+
 
 ### Auth
 
@@ -50,6 +87,15 @@ Does your project include any login or user profile functionality? If so, descri
 
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
 
+designing front end for each of the three pages, including finding/building any reusable components
+
+functionality of making sounds with key press, and allowing choice between multiple types of soundwaves via button or slider, choosing octave range, adsr controls
+
+
+
 ## Nice-to-haves
 
 Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
+
+
+more effects, saving patch functionality, record/loop functionality
