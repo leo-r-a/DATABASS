@@ -26,14 +26,14 @@ I would like to implement a playable keyboard, along with basic parameters for m
 react
 node
 sass
-tone.js
+tone.js (web audio api)
 mui
 
 
 
 ### APIs
 
-web audio api
+ i will create an api to serve information about what each of the controls on the synth do
 
 ### Sitemap
 
@@ -49,20 +49,20 @@ instrument page -
     this will be a visual representation of a synthesizer,
     including a piano keyboard with 12 keys, and controls to 
     select different mode of audio output. for example, which type of soundwave to generate,
-    octave switch, ADSR controls, 
+    octave switch, ADSR controls.
+
+    these controls will include a little tooltip next to them to display what it is that they do,
+    this info will be served  from my api so that i can create just one modal and display all the different 
+    info from that depending on which is called
 
 
-information page - 
-    this page will include a short description of what each control
-    on the instrument page does
 
 
 
 ### Mockups
 
-![roughsketch home page](../databass/assets/mockups/home.png)
-![roughsketch help page](../databass/assets/mockups/help.png)
-![roughsketch play page](../databass/assets/mockups/play.png)
+![roughsketch page](./assets/mockups/databass.png)
+
 
 ### Data
 
