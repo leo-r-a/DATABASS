@@ -37,13 +37,6 @@ mui
 
 ### Sitemap
 
-homepage - 
-    this will be the initial page you see when you load the app, 
-    it will have a brief description of what the app is and what it does.
-    will have an 'play' button to go to the instrument page, and a 'helpme'
-    button that goes to the information page
-
-
 
 instrument page -
     this will be a visual representation of a synthesizer,
@@ -70,13 +63,8 @@ Describe your data and the relationships between them. You can show this visuall
 
 ### Endpoints
 
-so far only needs front end endpoints so
-
-/ for homepage
-
-/help for help page
-
-/play for play page
+my endpoints will all be for calling information into the info display panel, so that 
+when you click a  question mark, the related information will be displayed
 
 
 ### Auth
