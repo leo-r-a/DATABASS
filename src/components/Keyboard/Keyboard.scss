@@ -1,0 +1,27 @@
+.piano-container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding-inline: 10vw;
+}
+.keyboard-container {
+    display: flex;
+    justify-content: space-between;
+}
+.octave-button {
+    width:10vw;
+    background: black;
+    color: yellowgreen;
+    font-size: 20px;
+    font-weight: 800;
+
+}
+.octave-button:disabled {
+    color: slategray;
+    background: lightgray;
+  }
+
+.ReactPiano__Key--active {
+    background: thistle;
+}
