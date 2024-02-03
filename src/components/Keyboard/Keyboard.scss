@@ -3,18 +3,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // padding-inline: 10vw;
+    
 }
 .keyboard-container {
     display: flex;
     justify-content: space-between;
+    background: black;
+    padding-top:1rem;
 }
 .octave-button {
     width:10vw;
-    background: black;
+    background: rgb(53, 51, 51);
     color: yellowgreen;
     font-size: 20px;
     font-weight: 800;
+    border: 1px solid slategray;
 
 }
 .octave-button:disabled {

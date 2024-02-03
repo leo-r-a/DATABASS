@@ -12,12 +12,15 @@
         display: flex;
         width:50vw;
         justify-content: center;
+        
     }
     &__title{
         color:black;
         font-size: 80px;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         align-self:flex-end;
-        
+        -webkit-text-stroke-color: yellowgreen;
+        -webkit-text-stroke-width: 1px;
+
     }
 }

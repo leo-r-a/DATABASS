@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { useState,useEffect } from "react";
+import "./SynthSelector.scss"
 
 export default function SynthSelector({ setWaveForm}) {
 
@@ -33,7 +34,7 @@ useEffect(() => {
       ];
  
   return (
-    <Box sx={{ height: 250 }}>
+    <Box sx={{ height: 225 }}>
       <Slider
         sx={{
           '& input[type="range"]': {

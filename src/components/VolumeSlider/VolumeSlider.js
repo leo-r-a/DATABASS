@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
+import "./VolumeSlider.scss"
 
 function VolumeSlider({ volume, setVolume }) {
     return (
