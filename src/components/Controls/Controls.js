@@ -1,5 +1,4 @@
 import "./Controls.scss"
-import synth from "../../assets/synth.png"
 
 
 
