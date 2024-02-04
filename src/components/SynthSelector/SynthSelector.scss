@@ -8,5 +8,5 @@
     color: yellowgreen;
 }
 .MuiSlider-markLabel {
-    color: yellowgreen;
+    color: yellowgreen !important; // necessary to override default behaviour of component //
 }
