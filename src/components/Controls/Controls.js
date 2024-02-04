@@ -3,6 +3,7 @@ import BeatSelector from "../BeatSelector/BeatSelector";
 import Effects from "../Effects/Effects";
 import "./Controls.scss";
 
+
 export default function Controls({
   attack,
   setAttack,
@@ -14,6 +15,10 @@ export default function Controls({
   setRelease,
   setChorus
 }) {
+
+
+
+
   return (
     <div className="controls-container">
       <ADSREnvelope
