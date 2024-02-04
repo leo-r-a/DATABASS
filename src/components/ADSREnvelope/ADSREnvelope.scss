@@ -1,0 +1,11 @@
+.adsrenv-container {
+    width: 30%;
+    padding: 1vw;
+    border: 2px solid yellowgreen;
+    border-radius: 4px;
+    height:15vw;
+    &--text {
+        color: yellowgreen;
+        font-size: large;
+    }
+}

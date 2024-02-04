@@ -6,7 +6,7 @@ import * as Tone from "tone";
 import VolumeSlider from "../VolumeSlider/VolumeSlider";
 import SynthSelector from "../SynthSelector/SynthSelector";
 
-function Keyboard() {
+function Keyboard({ attack, decay, sustain, release, chorus}) {
   const [octave, setOctave] = useState([2, 3]);
   const [volume, setVolume] = useState(-10);
   const [waveForm, setWaveForm] = useState("triangle");
@@ -19,12 +19,24 @@ function Keyboard() {
     keyboardConfig: KeyboardShortcuts.HOME_ROW,
   });
 
+  const chorusEffect = new Tone.Chorus(chorus[0], chorus[1], chorus[2]).toDestination().start();
   const synth = new Tone.PolySynth(Tone.Synth, {
     oscillator: {
       type: waveForm,
-      volume: volume,
+      volume: volume
     },
-  }).toDestination();
+    reverb: {
+      decay: 1
+    },
+    envelope: {
+      attack: attack,
+      decay: decay,
+      sustain: sustain,
+      release: release,
+    },
+  }).connect(chorusEffect);
+      
+
 
   const playNote = (midiNumber) => {
     const frequency = Tone.Frequency(midiNumber, "midi").toFrequency();
@@ -43,7 +55,7 @@ function Keyboard() {
     synth.releaseAll();
     setOctave([octave[0] - 1, octave[1] - 1]);
   }
-  const lowestPoint = octave[0] == 1;
+  const lowestPoint = octave[0] == 2;
   const highestPoint = octave[0] == 4;
 
   const handleKeyDown = (e) => {
