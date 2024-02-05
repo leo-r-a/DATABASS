@@ -1,0 +1,30 @@
+.piano-container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.keyboard-container {
+    display: flex;
+    justify-content: space-between;
+    background: black;
+    padding-top:1rem;
+}
+.octave-button {
+    width:10vw;
+    background: rgb(53, 51, 51);
+    color: yellowgreen;
+    font-size: 20px;
+    font-weight: 800;
+    border: 1px solid slategray;
+
+}
+.octave-button:disabled {
+    color: slategray;
+    background: lightgray;
+  }
+
+.ReactPiano__Key--active {
+    background: thistle;
+}

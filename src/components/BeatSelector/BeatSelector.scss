@@ -1,0 +1,48 @@
+.beat-selector-container {
+    width: 29vw;
+    padding: 2vw;
+    border: 2px solid yellowgreen;
+}
+.beat-selector-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+
+    &__label{
+        color:yellowgreen;
+    }
+    &__select {
+        color:yellowgreen;
+        width: 20vw;
+        border: 1px solid yellowgreen;
+        background-color: black;
+    }
+    &__option {
+        color:yellowgreen;
+
+    }
+}
+.beat-selector-buttons {
+    padding-top: 13vw;
+    padding-inline: 5vw;
+    display: flex;
+    justify-content: space-between;
+    &__play-beat {
+        width: 17vw;
+        height:3vw;
+        border-radius: 5px;
+        border: 1px solid yellowgreen;
+        color: yellowgreen;
+        background-color: black;
+    }
+    &__stop-beat {
+        width: 17vw;
+        height:3vw;
+        border-radius: 5px;
+        border: 1px solid yellowgreen;
+        color: yellowgreen;
+        background-color: black;
+
+    }
+}
