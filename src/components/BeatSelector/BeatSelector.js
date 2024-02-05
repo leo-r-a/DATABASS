@@ -15,6 +15,9 @@ export default function BeatSelector() {
   const [isLoading, setIsLoading] = useState(true);
   const [beat, setBeat] = useState(1);
 
+
+
+
   if (!beatsFileRef.current) {
     beatsFileRef.current = new Tone.Player(beatUrls[beat]).toDestination();
   }
@@ -47,6 +50,18 @@ export default function BeatSelector() {
       }
     });
   };
+
+  const handleBeatChange = (e) => {
+    if(isPlaying) {
+        beatsFileRef.current.stop();
+        setIsPlaying(false)
+    }
+    beatsFileRef.current = 0
+    setBeat(e.target.value);
+  };
+
+
+
   return (
     <div className="beat-selector-container">
       <form className="beat-selector-form">
@@ -54,10 +69,7 @@ export default function BeatSelector() {
         <select
           className="beat-selector-form__select"
           value={beat}
-          onChange={(e) => {
-            beatsFileRef.current = 0;
-            setBeat(e.target.value);
-          }}
+          onChange={handleBeatChange}
         >
           <option className="beat-selector-form__option" value={0}>
             hip hop

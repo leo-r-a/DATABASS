@@ -1,5 +1,5 @@
 import { Piano, KeyboardShortcuts, MidiNumbers } from "react-piano";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "react-piano/dist/styles.css";
 import "./Keyboard.scss";
 import * as Tone from "tone";
@@ -10,6 +10,7 @@ function Keyboard({ attack, decay, sustain, release, chorus, delay }) {
   const [octave, setOctave] = useState([2, 3]);
   const [volume, setVolume] = useState(-10);
   const [waveForm, setWaveForm] = useState("triangle");
+  const [synth, setSynth] = useState(null);
 
   const firstNote = MidiNumbers.fromNote(`c${octave[0]}`);
   const lastNote = MidiNumbers.fromNote(`f${octave[1]}`);
@@ -19,25 +20,56 @@ function Keyboard({ attack, decay, sustain, release, chorus, delay }) {
     keyboardConfig: KeyboardShortcuts.HOME_ROW,
   });
 
-  const chorusEffect = new Tone.Chorus(chorus[0], chorus[1], chorus[2]).toDestination().start();
-  const delayEffect = new Tone.PingPongDelay(delay[0], delay[1]).toDestination();
-  const synth = new Tone.PolySynth(Tone.Synth, {
-    oscillator: {
-      type: waveForm,
-      volume: volume
-    },
-    reverb: {
-      decay: 1
-    },
-    envelope: {
-      attack: attack,
-      decay: decay,
-      sustain: sustain,
-      release: release,
-    },
-  }).connect(chorusEffect).connect(delayEffect);
-      
+  const chorusEffect = useRef(
+    new Tone.Chorus(chorus[0], chorus[1], chorus[2]).toDestination().start()
+  );
+  const delayEffect = useRef(
+    new Tone.PingPongDelay(delay[0], delay[1]).toDestination()
+  );
 
+  useEffect(() => {
+    const newSynth = new Tone.PolySynth(Tone.Synth)
+      .connect(chorusEffect.current)
+      .connect(delayEffect.current);
+    setSynth(newSynth);
+
+    return () => {
+      newSynth.releaseAll();
+      newSynth.dispose();
+    };
+  }, []);
+
+  useEffect(() => {
+    chorusEffect.current.set({
+      frequency: chorus[0],
+      delayTime: chorus[1],
+      depth: chorus[2],
+    });
+  }, [chorus]);
+
+  useEffect(() => {
+    delayEffect.current.set({
+      delayTime: delay[0],
+      feedback: delay[1],
+    });
+  }, [delay]);
+
+  useEffect(() => {
+    if (synth) {
+      synth.set({
+        oscillator: {
+          type: waveForm,
+          volume: volume,
+        },
+        envelope: {
+          attack: attack,
+          decay: decay,
+          sustain: sustain,
+          release: release,
+        },
+      });
+    }
+  }, [waveForm, volume, attack, decay, sustain, release, synth]);
 
   const playNote = (midiNumber) => {
     const frequency = Tone.Frequency(midiNumber, "midi").toFrequency();
