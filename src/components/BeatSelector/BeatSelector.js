@@ -63,7 +63,7 @@ export default function BeatSelector() {
             hip hop
           </option>
           <option className="beat-selector-form__option" value={1}>
-            indie
+            chill
           </option>
           <option className="beat-selector-form__option" value={2}>
             house
