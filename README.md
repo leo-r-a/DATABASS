@@ -42,7 +42,7 @@ instrument page -
 
 ### Mockups
 
-![roughsketch page](./assets/mockups/DATABASS.png)
+![roughsketch page](./src/assets/mockups/DATABASS.png)
 
 
 ### Data
