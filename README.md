@@ -58,18 +58,23 @@ There are lots of things I want to do with this project, one of the hardest part
 Some things I would like to add in the future include:
 
 -Patch Saving
+
     I'd like to implement the ability to save your sound, the controls included allow you to make a lot of different sounds and i think it would be fun to build up a community bank of 'patches' for everyone to use.
 
 -More Beats
+
     You can never have too many choices when it comes to accompaniment beats to jam along with, so creating more and more to add to the server would be great.
 
 -Themes
+
     Some people may not like the zaniness of my original styling, so it would be fun to style this page multiple ways so that anyone could find something they like.
 
 -More Effects
+
     Currently the effects are pretty limited, and they are also only capable of 'on' and 'off' settings. I'd like to add more effects and also add the ability to change the parameters of each one, to finetune your sound even more.
 
 -Recording and Exporting
+
     It would be great to be able to record your jams and export them as a .wav or .mp3 file so you could share them with others, or use them as samples!
 
 
