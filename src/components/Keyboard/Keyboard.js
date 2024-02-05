@@ -6,7 +6,7 @@ import * as Tone from "tone";
 import VolumeSlider from "../VolumeSlider/VolumeSlider";
 import SynthSelector from "../SynthSelector/SynthSelector";
 
-function Keyboard({ attack, decay, sustain, release, chorus}) {
+function Keyboard({ attack, decay, sustain, release, chorus, delay }) {
   const [octave, setOctave] = useState([2, 3]);
   const [volume, setVolume] = useState(-10);
   const [waveForm, setWaveForm] = useState("triangle");
@@ -20,6 +20,7 @@ function Keyboard({ attack, decay, sustain, release, chorus}) {
   });
 
   const chorusEffect = new Tone.Chorus(chorus[0], chorus[1], chorus[2]).toDestination().start();
+  const delayEffect = new Tone.PingPongDelay(delay[0], delay[1]).toDestination();
   const synth = new Tone.PolySynth(Tone.Synth, {
     oscillator: {
       type: waveForm,
@@ -34,7 +35,7 @@ function Keyboard({ attack, decay, sustain, release, chorus}) {
       sustain: sustain,
       release: release,
     },
-  }).connect(chorusEffect);
+  }).connect(chorusEffect).connect(delayEffect);
       
 
 

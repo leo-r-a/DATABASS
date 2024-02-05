@@ -12,7 +12,7 @@ function App() {
   const [sustain, setSustain] = useState(0.5)
   const [release, setRelease] = useState(1.0)
   const [chorus, setChorus] = useState([0,0,0])
-  console.log(chorus)
+  const [delay, setDelay] = useState([0,0])
 
 
 
@@ -32,6 +32,7 @@ function App() {
         release={release}
         setRelease={setRelease}
         setChorus={setChorus}
+        setDelay={setDelay}
       />
       <Keyboard 
        attack ={attack}
@@ -39,6 +40,7 @@ function App() {
        sustain={sustain}
        release={release}
        chorus ={chorus}
+       delay={delay}
       />
     </div>
   );

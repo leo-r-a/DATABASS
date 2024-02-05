@@ -3,9 +3,21 @@
     padding: 1vw;
     border: 2px solid yellowgreen;
     height:15vw;
+    display: flex;
+flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &__header {
+        color:yellowgreen
+    }
+
+    &__switch {
+        width:3vw  !important; // necessary to override default behaviour of component //
+    }
 
     &--text {
         color: yellowgreen;
         font-size: large;
     }
+  
 }

@@ -13,7 +13,8 @@ export default function Controls({
   setSustain,
   release,
   setRelease,
-  setChorus
+  setChorus,
+  setDelay
 }) {
 
 
@@ -34,6 +35,7 @@ export default function Controls({
       <BeatSelector />
       <Effects
       setChorus={setChorus}
+      setDelay={setDelay}
       
       />
     </div>
